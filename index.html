@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="js">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js</title>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="app">
+  <!-- この#appの中にレンプレートを書き込んでいく -->
+  <p>{{ message }}</p>
+
+  <ol>
+    <li v-for="item in list">{{ item }}</li>
+  </ol>
+
+  <button v-on:click="handleClick">Click</button>
+
+  <p>{{ msg }}</p>
+  <input v-model="msg">
+  <!-- <input v-model.number="msg">数値になる -->
+
+  <!--<p v-if="show">Hello Vue.js</p>-->
+
+  <button v-on:click="show =! show">切り替え</button>
+  <transition>
+    <p v-if="show">まるごとりかこ見てる</p>
+  </transition>
+
+
+  <p>{{ count }}回クリックしたよ</p>
+  <button v-on:click="increment">カウントを増やす</button>
+
+
+  <p v-bind:class="{ child: isChild, 'is-active': isActive }">Text</p>
+  <p v-bind:style="{ color: textColor, backgroundColor: bgColor }">Text</p>
+
+  <p v-bind:class="[ isActive ? 'active' : 'normal', otherClass ]">text</p>
+
+  <p v-bind:class="classObject">text2</p>
+  <p v-bind:style="styleObject">text2</p>
+
+  <img v-bind="item">
+  <!-- 特定の要素の変更 -->
+  <img v-bind="item" v-bind:id="'thumb-' + item.id">
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <circle cx="100" cy="75" v-bind:r="radius" fill="lightpink"/>
+  </svg>
+  <input type="range" min="0" max="100" v-model="radius">
+
+
+  <div v-if="ok">ifによる描画</div>
+  <div v-show="ok">showによる描画</div>
+
+  <div v-if="ng">ifによる描画</div>
+  <div v-show="ng">showによる描画</div>
+
+  <template v-if="ok"><!-- v-showは使えない -->
+    <header>タイトル</header>
+    <div>コンテンツ</div>
+  </template>
+
+
+  <div v-if="type === 'A'">
+    typeは　A
+  </div>
+  <div v-else-if="type === 'b'">
+    typeは　B
+  </div>
+  <div v-else>
+    すべての条件をみたさなかった
+  </div>
+
+
+  <pre>{{ $data }}<pre>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
