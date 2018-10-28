@@ -28,7 +28,7 @@ var app = new Vue({
     radius: 50,
     ok: true,
     ng: false,
-    loaded: true
+    loaded: false
   },
 
   methods: {
