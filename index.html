@@ -74,6 +74,13 @@
     すべての条件をみたさなかった
   </div>
 
+  <div v-if="loaded" key="content-visible">
+    content
+  </div>
+  <div v-else key="content-loading">
+    loading now...
+  </div>
+
 
   <pre>{{ $data }}<pre>
 </div>
