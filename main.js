@@ -87,5 +87,11 @@ var app = new Vue({
     }, this)
   }*/
 
+  /*mounted: function () {
+    console.log(this.$el)
+  }*/
+  mounted: function () {
+    console.log(this.$refs.hello)
+  }
 
 })
