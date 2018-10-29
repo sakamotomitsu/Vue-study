@@ -3,6 +3,7 @@ var app = new Vue({
 
   data: {
     message: 'Hello Vue.js!',
+    htmlmsg: 'Hello <strong>Vue.js!</strong>',
     msg: '初期メッセージ',
     show: true,
     list: ['りんご', 'ばなな', 'いちご'],
