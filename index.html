@@ -81,6 +81,12 @@
     loading now...
   </div>
 
+  <!-- <li v-for="要素を代入する変数名 in 繰り返したい配列やオブジェクト> -->
+  <ul>
+    <li v-for="item in monslist" v-bind:key="item.id">
+      ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
+    </li>
+  </ul>
 
   <pre>{{ $data }}<pre>
 </div>
