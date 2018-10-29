@@ -29,6 +29,7 @@ var app = new Vue({
     ok: true,
     ng: false,
     loaded: false,
+    name: 'キマイラ',
     monslist: [
       { id: 1, name: 'スライム', hp: 100 },
       { id: 2, name: 'ゴブリン', hp: 200 },
@@ -42,6 +43,18 @@ var app = new Vue({
     },
     increment: function () {
       this.count += 1
+    },
+    //追加ぼたんをクリックしたときのハンドラ
+    doAdd: function () {
+      var max = this.monslist.reduce(function (a, b) {
+        return a > b.id ? a : b.id
+      }, 0)
+      //新しいモンスターをリスト追加
+      this.monslist.push({
+        id: max + 1,
+        name: this.name,
+        hp: 500
+      })
     }
   }
 
