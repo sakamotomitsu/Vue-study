@@ -62,7 +62,20 @@ var app = new Vue({
     //削除ボタン
     doRemove: function (index) {
       this.monslist.splice(index, 1)
+    },
+
+    //攻撃ボタン
+    doAttack: function (index) {
+      this.monslist[index].hp -= 10 //HPを減らす
     }
-  }
+  },
+
+  /*created: function () {
+    //全ての要素にactiveプロパティを追加
+    this.monslist.forEach(function (item) {
+      this.$set(item, 'active', false)
+      //item.active = falseではリアクティブにならない
+    }, this)
+  }*/
 
 })
