@@ -88,6 +88,20 @@
     </li>
   </ul>
 
+  <ul>
+    <li v-for="item in monslist" v-bind:key="item.id" v-bind:class="{ tuyoi: item.hp > 300}">
+      ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
+      <span v-if="item.hp > 300">つよい！</span>
+    </li>
+  </ul>
+
+  <h4>hpが300より小さい</h4>
+  <ul>
+    <li v-for="item in monslist" v-bind:key="item.id" v-if="item.hp < 300">
+      ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
+    </li>
+  </ul>
+
   <pre>{{ $data }}<pre>
 </div>
 
