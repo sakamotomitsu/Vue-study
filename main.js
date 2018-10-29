@@ -34,7 +34,16 @@ var app = new Vue({
       { id: 1, name: 'スライム', hp: 100 },
       { id: 2, name: 'ゴブリン', hp: 200 },
       { id: 3, name: 'ドラゴン', hp: 500 }
-    ]
+    ],
+    jsonlist: []
+  },
+
+  created: function () {
+    axios.get('list.json').then(function (response) {
+      this.jsonlist = response.data
+    }.bind(this)).catch(function (e) {
+      console.error(e)
+    })
   },
 
   methods: {
@@ -77,5 +86,6 @@ var app = new Vue({
       //item.active = falseではリアクティブにならない
     }, this)
   }*/
+
 
 })
