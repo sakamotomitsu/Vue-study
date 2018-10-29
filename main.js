@@ -41,9 +41,11 @@ var app = new Vue({
     handleClick: function (event) {
       alert(event.target)
     },
+
     increment: function () {
       this.count += 1
     },
+
     //追加ぼたんをクリックしたときのハンドラ
     doAdd: function () {
       var max = this.monslist.reduce(function (a, b) {
@@ -55,6 +57,11 @@ var app = new Vue({
         name: this.name,
         hp: 500
       })
+    },
+
+    //削除ボタン
+    doRemove: function (index) {
+      this.monslist.splice(index, 1)
     }
   }
 
