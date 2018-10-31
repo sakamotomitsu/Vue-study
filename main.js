@@ -22,7 +22,7 @@ var app = new Vue({
     },
     item: {
       id: 1,
-      src: 'item1.jpg',
+      src: 'img/testimg.jpg',
       width: 200,
       height: 200
     },

@@ -143,6 +143,10 @@
   <h5>v-html</h5>
   <span v-html="htmlmsg"></span>
 
+  <br>
+
+  <img src="img/testimg.jpg" width="200px" height="200px" v-on:load="show=true" v-bind:class="{hide: !show}">
+
 
   <pre>{{ $data }}<pre>
 </div>
