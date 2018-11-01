@@ -77,6 +77,10 @@ var app = new Vue({
     //攻撃ボタン
     doAttack: function (index) {
       this.monslist[index].hp -= 10 //HPを減らす
+    },
+
+    handler: function (comment) {
+      console.log(comment)
     }
   },
 

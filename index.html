@@ -147,6 +147,8 @@
 
   <img src="img/testimg.jpg" width="200px" height="200px" v-on:load="show=true" v-bind:class="{hide: !show}">
 
+  <div v-on:click.right="handler">右example</div>
+  <div v-on:click.right.prevent="handler">右example</div>
 
   <pre>{{ $data }}<pre>
 </div>
