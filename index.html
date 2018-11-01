@@ -160,6 +160,14 @@
     <a href="#top" v-on:click.prevent="handler('div4')">div4</a>
   </div>
 
+  <div v-on:click.capture="handler('div5')">
+    div5
+    <div v-on:click="handler('div6')">
+      div6
+      <div v-on:click="handler('div7')">div7</div>
+    </div>
+  </div>
+
   <pre>{{ $data }}<pre>
 </div>
 
