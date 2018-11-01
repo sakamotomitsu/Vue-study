@@ -170,6 +170,8 @@
 
   <input v-on:keydown.up.down.left.right="handler">
 
+  <button v-on:click.shift="handler('delete')">削除ボタン</button>
+
   <pre>{{ $data }}<pre>
 </div>
 
