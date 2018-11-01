@@ -150,6 +150,11 @@
   <div v-on:click.right="handler">右example</div>
   <div v-on:click.right.prevent="handler">右example</div>
 
+  <div v-on:click="handler('div1')">
+    div1
+    <a href="#top" v-on:click.stop="handler('div2')">div2</a>
+  </div>
+
   <pre>{{ $data }}<pre>
 </div>
 
