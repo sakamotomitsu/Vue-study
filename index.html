@@ -172,6 +172,28 @@
 
   <button v-on:click.shift="handler('delete')">削除ボタン</button>
 
+
+  <textarea v-model="modmessage"></textarea>
+  <pre>{{ modmessage }}</pre>
+
+  <!-- こう書くことはできへんよ
+  <textarea>{{ modmessage}}</textarea>
+  -->
+
+  <label>
+    <input type="checkbox" v-model="val">{{ val }}
+    <input type="checkbox" v-model="val2" true-value="yes" false-value="no">{{ val2 }}
+  </label>
+
+  <label><input type="checkbox" v-model="val3" value="A">A</label>
+  <label><input type="checkbox" v-model="val3" value="B">B</label>
+  <label><input type="checkbox" v-model="val3" value="C">C</label>
+  <p>{{ val3 }}</p>
+
+
+
+
+
   <pre>{{ $data }}<pre>
 </div>
 

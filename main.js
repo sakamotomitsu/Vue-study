@@ -36,7 +36,11 @@ var app = new Vue({
       { id: 2, name: 'ゴブリン', hp: 200 },
       { id: 3, name: 'ドラゴン', hp: 500 }
     ],
-    jsonlist: []
+    jsonlist: [],
+    modmessage: 'heeeeeelo',
+    val: true,
+    val2: true,
+    val3: []
   },
 
   created: function () {
