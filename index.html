@@ -215,6 +215,10 @@
   </select>
   <p>{{ val6 }}</p>
 
+  <h5>画像ファイル</h5>
+  <input type="file" v-on:change="handleChange">
+  <div v-if="preview"><img v-bind:src="preview"></div>
+
 
 
 

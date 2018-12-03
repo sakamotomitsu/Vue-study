@@ -43,7 +43,8 @@ var app = new Vue({
     val3: [],
     val4: '',
     val5: '',
-    val6: []
+    val6: [],
+    preview: ''
   },
 
   created: function () {
@@ -88,7 +89,16 @@ var app = new Vue({
 
     handler: function (comment) {
       console.log(comment)
+    },
+
+    handleChange: function(event) {
+      var file = event.target.files[0]
+
+      if( file && file.type.match(/^image\/(png|jpeg)$/)){
+        this.preview = window.URL.createObjectURL(file)
+      }
     }
+
   },
 
   /*created: function () {
@@ -106,4 +116,4 @@ var app = new Vue({
     console.log(this.$refs.hello)
   }
 
-})
+});
