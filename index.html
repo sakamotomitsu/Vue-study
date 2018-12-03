@@ -180,20 +180,43 @@
   <textarea>{{ modmessage}}</textarea>
   -->
 
+  <h5>チェックボックス</h5>
   <label>
     <input type="checkbox" v-model="val">{{ val }}
     <input type="checkbox" v-model="val2" true-value="yes" false-value="no">{{ val2 }}
   </label>
 
+  <h5>チェックボックス2</h5>
   <label><input type="checkbox" v-model="val3" value="A">A</label>
   <label><input type="checkbox" v-model="val3" value="B">B</label>
   <label><input type="checkbox" v-model="val3" value="C">C</label>
   <p>{{ val3 }}</p>
 
+  <h5>ラジオボタン</h5>
   <label><input type="radio" v-model="val4" value="A">A</label>
   <label><input type="radio" v-model="val4" value="B">B</label>
   <label><input type="radio" v-model="val4" value="C">C</label>
   <p>{{ val4 }}</p>
+
+  <h5>セレクトボックス</h5>
+  <select v-model="val5">
+    <option disabled="disabled">洗濯してください</option>
+    <option value="a">A</option>
+    <option value="b">B</option>
+    <option value="c">C</option>
+  </select>
+  <p>{{ val5 }}</p>
+
+  <h5>セレクトボックス2</h5>
+  <select v-model="val6" multiple>
+    <option value="a">A</option>
+    <option value="b">B</option>
+    <option value="c">C</option>
+  </select>
+  <p>{{ val6 }}</p>
+
+
+
 
 
 

@@ -41,7 +41,9 @@ var app = new Vue({
     val: true,
     val2: true,
     val3: [],
-    val4: ''
+    val4: '',
+    val5: '',
+    val6: []
   },
 
   created: function () {
