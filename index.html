@@ -219,7 +219,9 @@
   <input type="file" v-on:change="handleChange">
   <div v-if="preview"><img v-bind:src="preview"></div>
 
-
+  <h5>その他</h5>
+  <input type="range" v-model.number="val7">
+  {{ val7 }}
 
 
 
