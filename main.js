@@ -40,7 +40,8 @@ var app = new Vue({
     modmessage: 'heeeeeelo',
     val: true,
     val2: true,
-    val3: []
+    val3: [],
+    val4: ''
   },
 
   created: function () {
