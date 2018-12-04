@@ -45,7 +45,9 @@ var app = new Vue({
     val5: '',
     val6: [],
     preview: '',
-    val7: 50
+    val7: 50,
+    scrollY: 0,
+    timer: null
   },
 
   created: function () {
@@ -54,6 +56,15 @@ var app = new Vue({
     }.bind(this)).catch(function (e) {
       console.error(e)
     })
+  },
+
+  created: function() {
+    //ハンドラを登録
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy: function() {
+    //ハンドラを解除
+    window.removeEventListener('scroll', this.handleScroll)
   },
 
   methods: {
@@ -97,6 +108,16 @@ var app = new Vue({
 
       if( file && file.type.match(/^image\/(png|jpeg)$/)){
         this.preview = window.URL.createObjectURL(file)
+      }
+    },
+
+    handleScroll: function() {
+      if (this.timer === null){
+        this.timer = setTimeout(function() {
+          this.scrollY = window.scrollY
+          clearTimeout(this.timer)
+          this.timer = null
+        }.bind(this), 200)
       }
     }
 

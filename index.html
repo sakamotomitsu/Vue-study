@@ -223,6 +223,7 @@
   <input type="range" v-model.number="val7">
   {{ val7 }}
 
+  <p v-bind:class="{ compact: scrollY > 200 }">200pxより下にスクロールしたら.compactを付与</p>
 
 
 
