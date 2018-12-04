@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Vue.js</title>
   <link href="main.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@12.1.5"></script>
 </head>
 <body>
 
@@ -225,7 +226,7 @@
 
   <p v-bind:class="{ compact: scrollY > 200 }">200pxより下にスクロールしたら.compactを付与</p>
 
-
+  <div v-on:click="scrollTop">ページ上部へ</div>
 
   <pre>{{ $data }}<pre>
 </div>
