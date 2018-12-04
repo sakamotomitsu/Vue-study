@@ -236,9 +236,24 @@
   <p>X: {{ halfPoint.x }}</p>
   <p>Y: {{ halfPoint.y }}</p>
 
+  <h5>ゲッターとセッター</h5>
+  <input v-model.number="width">{{ width }}
+  <input v-model.number="halfWidth">{{ halfWidth }}
 
 
-  <pre>{{ $data }}<pre>
+  <h6>算出プロパティ</h6>
+  <ol>
+    <li>{{ computedData}}</li>
+    <li>{{ computedData}}</li>
+  </ol>
+  <h6>メソッド</h6>
+  <ol>
+    <li>{{ methodsData() }}</li>
+    <li>{{ methodsData() }}</li>
+  </ol>
+
+
+  <pre>{{ $data }}</pre>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>

@@ -127,6 +127,10 @@ var app = new Vue({
 
     scrollTop : function () {
       scroll.animateScroll(0)
+    },
+
+    methodsData: function () {
+      return Math.random()
     }
 
   },
@@ -148,8 +152,10 @@ var app = new Vue({
 
 
   computed: {
-    halfWidth: function () {
-      return this.width / 2
+    halfWidth: {
+      get: function() { return this.width / 2 },
+      set: function(val) { this.width = val * 2 },
+
     },
     halfHeight: function () {
       return this.height / 2
@@ -160,6 +166,10 @@ var app = new Vue({
         x: this.halfWidth,
         y: this.halfHeight
       }
+    },
+
+    computedData: function () {
+      return Math.random()
     }
   }
 
