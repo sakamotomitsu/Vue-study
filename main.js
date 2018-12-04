@@ -49,7 +49,9 @@ var app = new Vue({
     preview: '',
     val7: 50,
     scrollY: 0,
-    timer: null
+    timer: null,
+    width: 800,
+    height: 600
   },
 
   created: function () {
@@ -142,6 +144,23 @@ var app = new Vue({
   }*/
   mounted: function () {
     console.log(this.$refs.hello)
+  },
+
+
+  computed: {
+    halfWidth: function () {
+      return this.width / 2
+    },
+    halfHeight: function () {
+      return this.height / 2
+    },
+    //widthとheightの中心を返す
+    halfPoint: function () {
+      return {
+        x: this.halfWidth,
+        y: this.halfHeight
+      }
+    }
   }
 
 });
