@@ -5,6 +5,7 @@
   <title>Vue.js</title>
   <link href="main.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@12.1.5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
 </head>
 <body>
 
@@ -256,9 +257,16 @@
   <input v-model.number="budget">円以下に絞り込む
   <input v-model.number="limit">件を表示
   <p>{{ matched.length }}件中 {{ limited.length }}件を表示中</p>
+  <button v-on:click="order=!order">切り替え</button>
   <ul>
     <li v-for="item in limited" v-bind:key="item.id">{{ item.name }} {{ item.price }}円</li>
   </ul>
+
+
+
+
+
+
 
   <pre>{{ $data }}</pre>
 </div>
