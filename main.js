@@ -61,7 +61,13 @@ var app = new Vue({
       { id: 4, name: 'オレンジ', price: 300 },
       { id: 5, name: 'メロン', price: 500 },
     ],
-    order: false
+    order: false,
+    gitlist: [],
+    current: '',
+    topics: [
+      { value: 'vue', name: 'Vue.js' },
+      { value: 'jQuery', name: 'jQuery' }
+    ]
   },
 
   created: function () {
@@ -192,6 +198,16 @@ var app = new Vue({
     },
     limited: function () {
       return this.sorted.slice(0, this.limit)
+    }
+  },
+
+  watch: {
+    current: function (val) {
+      axios.get('https://api.github.com/search/repositories', {
+        params: { q: 'topic:' + val}
+      }).then(function (response) {
+        this.gitlist = response.data.items
+      }.bind(this))
     }
   }
 

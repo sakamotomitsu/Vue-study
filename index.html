@@ -263,6 +263,13 @@
   </ul>
 
 
+  <h5>github</h5>
+  <select v-model="current">
+    <option v-for="topic in topics" v-bind:value="topic.value">
+      {{ topic.name }}
+    </option>
+  </select>
+  <div v-for="item in gitlist">{{ item.full_name }}</div>
 
 
 
