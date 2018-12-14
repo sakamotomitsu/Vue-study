@@ -286,6 +286,10 @@
   <h5>カスタムディレクティブ</h5>
   <input v-focus>
 
+  <button v-on:click="list.push(list.length+1)">追加</button>
+  <ul ref="list">
+    <li v-for="item in list">{{ item }}</li>
+  </ul>
 
 
   <pre>{{ $data }}</pre>

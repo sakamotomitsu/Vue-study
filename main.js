@@ -54,7 +54,7 @@ var app = new Vue({
     height: 600,
     budget: 300,
     limit: 2,
-    list: [
+    Tlist: [// list
       { id: 1, name: 'りんご', price: 100 },
       { id: 2, name: 'ばなな', price: 200 },
       { id: 3, name: 'いちご', price: 400 },
@@ -68,7 +68,8 @@ var app = new Vue({
       { value: 'vue', name: 'Vue.js' },
       { value: 'jQuery', name: 'jQuery' }
     ],
-    price: 19800
+    price: 19800,
+    list: []
   },
 
   created: function () {
@@ -209,6 +210,13 @@ var app = new Vue({
       }).then(function (response) {
         this.gitlist = response.data.items
       }.bind(this))
+    },
+
+    list: function () {
+      console.log('通常', this.$refs.list.offsetHeight)
+      this.$nextTick(function () {
+        console.log('nextTick', this.$refs.list.offsetHeight)
+      })
     }
   },
 
