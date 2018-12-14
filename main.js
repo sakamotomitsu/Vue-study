@@ -67,7 +67,8 @@ var app = new Vue({
     topics: [
       { value: 'vue', name: 'Vue.js' },
       { value: 'jQuery', name: 'jQuery' }
-    ]
+    ],
+    price: 19800
   },
 
   created: function () {
@@ -208,6 +209,13 @@ var app = new Vue({
       }).then(function (response) {
         this.gitlist = response.data.items
       }.bind(this))
+    }
+  },
+
+
+  filters: {
+    localNum: function (val) {
+      return val.toLocaleString();
     }
   }
 
