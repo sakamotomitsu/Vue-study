@@ -216,7 +216,15 @@ var app = new Vue({
   filters: {
     localNum: function (val) {
       return val.toLocaleString();
-    }
-  }
+    },
+  },
+
+
 
 });
+
+
+/* フィルター - グローバルへの登録 */
+/*Vue.filters('localNum', function (val) {
+  return val.toLocaleString();
+});*/
