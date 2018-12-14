@@ -233,6 +233,16 @@ var app = new Vue({
   },
 
 
+  directives: {
+    focus: {
+      //紐付いてる要素がDOMに挿入される時
+      inserted: function (el) {
+        el.focus()//要素にフォーカスを当てる
+      }
+    }
+  }
+
+
 
 });
 
