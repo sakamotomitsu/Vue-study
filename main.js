@@ -217,6 +217,10 @@ var app = new Vue({
     localNum: function (val) {
       return val.toLocaleString();
     },
+
+    filter: function (message, foo, num) {
+      console.log(message, foo, num);
+    }
   },
 
 
