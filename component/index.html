@@ -20,6 +20,13 @@
   </ul>
 
   <comp-child-emit v-on:child-event="parentsMethod"></comp-child-emit>
+
+  <h5>$emitで修正</h5>
+  <ul>
+    <comp-child2 v-for="item in list2"
+      v-bind:key="item.id" v-bind="item"
+      v-on:attack="handleAttack"></comp-child2>
+  </ul>
 </div>
 
 
