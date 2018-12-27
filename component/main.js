@@ -44,6 +44,15 @@ Vue.component('comp-child', {
   }
 });
 
+Vue.component('comp-child-emit', {
+  template: '<button v-on:click="handleClick">イベント発火</button>',
+  methods: {
+    handleClick: function () {
+      this.$emit('child-event')
+    }
+  }
+})
+
 
 var app = new Vue({
   el: '#app',
@@ -54,6 +63,13 @@ var app = new Vue({
       {id: 2, name: 'ゴブリン', hp: 200},
       {id: 3, name: 'ドラゴン', hp: 500}
     ]
+  },
+
+  methods: {
+    //child-eventが発火した
+    parentsMethod: function () {
+      alert('イベントをキャッチ!')
+    }
   }
 
   // components: {
