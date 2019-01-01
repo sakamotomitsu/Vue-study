@@ -66,6 +66,35 @@ Vue.component('comp-child-emit', {
 });
 
 
+var bus = new Vue({
+  data: {
+    count: 0
+  }
+});
+Vue.component('component-b', {
+  template: '<p>bus: {{ bus.count }}</p>',
+  computed: {
+    bus: function () {
+      return bus.$data
+    }
+  },
+  created: function () {
+    bus.$on('bus-event', function () {
+      this.count++
+    })
+  }
+});
+Vue.component('count-go', {
+  template: '<button v-on:click="handleClick">イベント発火</button>',
+  methods: {
+    handleClick: function () {
+      bus.$emit('bus-event')
+    }
+  }
+});
+
+
+
 var app = new Vue({
   el: '#app',
 
