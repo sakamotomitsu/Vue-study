@@ -30,7 +30,13 @@
 
   <component-b></component-b>
   <count-go></count-go>
-</div>
+
+
+  <data-component
+    v-bind:name.sync="name"
+    v-bind:hp.sync="hp"></data-component>
+
+</div><!-- #app END -->
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
