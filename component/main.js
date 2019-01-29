@@ -132,6 +132,31 @@ Vue.component('my-component-b', {
 
 
 
+
+//mixinを定義
+var mixin = {
+  created: function () {
+    this.hello()
+  },
+  methods: {
+    hello: function () {
+      console.log('hello from mixin!')
+    }
+  }
+};
+
+Vue.component('my-component-mixin-a', {
+  mixins: [mixin],  //mixinを登録
+  template: '<p>MycomponentA</p>'
+});
+
+Vue.component('my-component-mixin-b', {
+  mixins: [mixin],  //mixinを登録
+  template: '<p>MycomponentB</p>'
+});
+
+
+
 var app = new Vue({
   el: '#app',
 
