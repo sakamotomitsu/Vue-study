@@ -44,6 +44,13 @@
   <my-component-mixin-a></my-component-mixin-a>
   <my-component-mixin-b></my-component-mixin-b>
 
+
+  <button v-on:click="current2='comp-board'">メッセージ一覧</button>
+  <button v-on:click="current2='comp-form'">投稿フォーム</button>
+  <keep-alive>
+    <div v-bind:is="current2"></div>
+  </keep-alive>
+
 </div><!-- #app END -->
 
 

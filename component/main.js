@@ -156,6 +156,19 @@ Vue.component('my-component-mixin-b', {
 });
 
 
+// メッセージ一覧用コンポーネント
+Vue.component('comp-board', {
+  template: '<div>Message Board</div>'
+});
+// 入力フォーム用コンポーネント
+Vue.component('comp-form', {
+  template: '<div>Form<textarea v-model="message"></textarea></div>',
+  data: function () {
+    return { message: '' }
+  }
+});
+
+
 
 var app = new Vue({
   el: '#app',
@@ -174,7 +187,8 @@ var app = new Vue({
     name: 'スライム',
     hp: 100,
     componentTypes: ['my-component-a', 'my-component-b'],
-    current: 0
+    current: 0,
+    current2: 'comp-board' //動的切り替え
   },
 
   methods: {
