@@ -120,6 +120,18 @@ Vue.component('data-component', {
 
 
 
+// コンポーネントA
+Vue.component('my-component-a', {
+  template: '<div class="my-component-a">component A</div>'
+});
+
+// コンポーネントB
+Vue.component('my-component-b', {
+  template: '<div class="my-component-b">component B</div>'
+});
+
+
+
 var app = new Vue({
   el: '#app',
 
@@ -135,7 +147,9 @@ var app = new Vue({
       {id: 3, name: 'ドラゴン', hp: 500}
     ],
     name: 'スライム',
-    hp: 100
+    hp: 100,
+    componentTypes: ['my-component-a', 'my-component-b'],
+    current: 0
   },
 
   methods: {
@@ -150,10 +164,16 @@ var app = new Vue({
       })
       if(item !== undefined && item.hp > 0) item.hp -= 10
     }
-  }
+  },
 
   // components: {
   //   //<my-component>がルートでのみ使用可能になる
   //   'my-component': myComponent
   // }
+  computed: {
+    component: function () {
+      //currentと一致するindexのコンポーネントを使用
+      return this.componentTypes[this.current]
+    }
+  }
 })

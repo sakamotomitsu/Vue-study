@@ -36,6 +36,10 @@
     v-bind:name.sync="name"
     v-bind:hp.sync="hp"></data-component>
 
+
+  <button v-on:click="current=1">toggle</button>
+  <div v-bind:is="component"></div>
+
 </div><!-- #app END -->
 
 
