@@ -24,10 +24,15 @@
     <div v-show="show">トランジションさせたい要素</div>
   </transition>
 
+  <transition appear>
+    <div v-show="show">初期描画時にトランジションさせたい要素</div>
+  </transition>
+
+  <!--
   <transition name="demo">
     <div v-show="show">トランジションさせたい要素</div>
   </transition>
-  <!-- クラスのプレフィックスが demo- になる -->
+   //クラスのプレフィックスが demo- になる -->
 
 </div>
 
