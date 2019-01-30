@@ -46,6 +46,11 @@
     .v-move {
       transition: transform 1s;
     }
+
+    /*
+     leaveとmoveは同時に発生することがある
+     :not( ~ )で回避することができる
+    */
   </style>
 </head>
 <body>
