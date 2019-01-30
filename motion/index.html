@@ -12,6 +12,18 @@
     .v-enter, v-leave-to {
       opacity: 0;
     }
+
+    .betu-enter-active, .betu-leave-active {
+      transition: opacity 1s, transform 1s;
+    }
+    .betu-enter {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    .betu-leave-to {
+      opacity: 0;
+      transform: translateY(10px);
+    }
   </style>
 </head>
 <body>
@@ -21,6 +33,15 @@
   <button v-on:click="show=!show">切り替え</button>
 
   <transition>
+    <div v-show="show">トランジションさせたい要素</div>
+  </transition>
+
+  <transition>
+    <div v-if="show" key="a">TRUE</div>
+    <div v-else key="b">FALSE</div>
+  </transition>
+
+  <transition name="betu">
     <div v-show="show">トランジションさせたい要素</div>
   </transition>
 
