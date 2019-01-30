@@ -28,6 +28,19 @@
       opacity: 0;
       transform: translateY(10px);
     }
+
+
+    .count-enter-active, .count-leave-active {
+      transition: opacity 1s;
+    }
+
+    .count-leave-active {
+      position: absolute;
+    }
+
+    .count-enter, count-leave-to {
+      opacity: 0;
+    }
   </style>
 </head>
 <body>
@@ -58,6 +71,12 @@
     <div v-show="show">トランジションさせたい要素</div>
   </transition>
    //クラスのプレフィックスが demo- になる -->
+
+
+  <button v-on:click="count++">カウント切り替え</button>
+  <transition name="count" mode="out-in">
+    <div v-bind:key="count">{{ count }}</div>
+  </transition>
 
 </div>
 
