@@ -40,7 +40,7 @@
     <div v-show="show">トランジションさせたい要素</div>
   </transition>
 
-  <transition>
+  <transition mode="out-in">
     <div v-if="show" key="a">TRUE</div>
     <div v-else key="b">FALSE</div>
   </transition>
