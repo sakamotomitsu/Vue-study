@@ -51,6 +51,20 @@
      leaveとmoveは同時に発生することがある
      :not( ~ )で回避することができる
     */
+
+
+    .svg-enter-active, .svg-leave-active {
+      transition: all 1s;
+    }
+
+    .svg-leave-active {
+      position: absolute;
+    }
+
+    .svg-enter, .svg-leave-to {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
   </style>
 </head>
 <body>
@@ -95,6 +109,15 @@
       {{ item.name }} {{ item.price }}円
     </li>
   </transition-group>
+
+
+  <button v-on:click="toggle=!toggle">切り替え</button>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <transition name="svg">
+      <my-circle v-bind:fill="fill" v-bind:key="fill"></my-circle>
+    </transition>
+  </svg>
+  
 
 </div>
 
