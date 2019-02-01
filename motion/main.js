@@ -16,6 +16,17 @@ var app = new Vue({
     ],
     toggle: false
   },
+
+  methods: {
+    enter: function (el, done) {
+      console.log('enter');
+      setTimeout(done, 1000) // 1秒後にenterを終了してafter-enterに遷移
+    },
+    afterEnter: function (el) {
+      console.log('afterEnter')
+    }
+  },
+
   computed: {
     sortedList: function () {
       return _.orderBy(this.list, 'price', this.order ? 'desc' : 'asc')

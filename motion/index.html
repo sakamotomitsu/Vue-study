@@ -117,7 +117,10 @@
       <my-circle v-bind:fill="fill" v-bind:key="fill"></my-circle>
     </transition>
   </svg>
-  
+
+  <transition v-on:enter="enter" v-on:after-enter="afterEnter">
+    <div v-if="show">example</div>
+  </transition>
 
 </div>
 
