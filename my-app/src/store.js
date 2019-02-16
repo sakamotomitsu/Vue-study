@@ -16,6 +16,11 @@ const store = new Vuex.Store({
     increment(state) {
       state.count++
     }
+
+    /*
+    アロー関数を使うこともできる
+    increment: state => { state.count++ }
+    */
   }
 
 })
