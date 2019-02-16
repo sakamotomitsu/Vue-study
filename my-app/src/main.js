@@ -66,7 +66,9 @@ Vue.component('my-component', {
 
 
 /* ランタイム限定 */
+import store from './store.js'
 new Vue({
   el: '#app',
+  store, // storeを登録
   render: h => h(App)
 })
