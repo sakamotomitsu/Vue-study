@@ -12,6 +12,13 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  created() {
+    //ストアの状態を取得
+    console.log(this.$store.state.count)
+
+    //ストアの状態を更新
+    this.$store.commit('increment')
   }
 }
 </script>
