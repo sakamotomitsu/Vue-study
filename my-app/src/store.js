@@ -30,8 +30,9 @@ export default store
 */
 
 //VueとVuexのモジュールを読み込む
-import Vue from 'Vue'
-import Vuex from 'Vuex'
+import Vue from 'vue'
+import Vuex from 'vuex'
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
