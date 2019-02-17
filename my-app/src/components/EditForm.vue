@@ -8,7 +8,11 @@
   export default {
     name: "EditForm",
     computed: {
-      message(event) {
+      message() { return this.$store.getters.message }
+    },
+    methods: {
+      doUpdate(event) {
+        //inputの値を持ってディスパッチ
         store.dispatch('doUpdata', event.target.value)
       }
     }

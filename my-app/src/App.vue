@@ -6,27 +6,8 @@
 </template>
 
 <script>
-/*
-import HelloWorld from './components/HelloWorld'
-
-export default {
-name: 'App',
-components: {
-EditForm,
-HelloWorld
-},
-created() {
-//ストアの状態を取得
-console.log(this.$store.state.count)
-
-//ストアの状態を更新
-this.$store.commit('increment')
-}
-}
-*/
-
-//子コンポーネントを読み込む
-import EditForm from "@/components/EditForm";
+  //子コンポーネントを読み込む
+import EditForm from "./components/EditForm.vue";
 export default {
   name: 'app',
   components: { EditForm },
