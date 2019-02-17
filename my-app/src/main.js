@@ -2,7 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 
 import Vue from 'vue'
-import App from './App'
+import App from './App.Vue'
+import store from './store'
 
 
 Vue.config.productionTip = false
@@ -58,7 +59,6 @@ Vue.component('my-component', {
 
 
 /* ランタイム限定 */
-import store from './store.js'
 new Vue({
   el: '#app',
   store, // storeを登録
