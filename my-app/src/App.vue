@@ -1,11 +1,7 @@
 <template>
   <div id="app">
-    <!--
-    <img src="./assets/logo.png">
-    <HelloWorld/>
-    -->
     <p>{{ message }}</p>
-    <EditForm/>
+    <EditForm />
   </div>
 </template>
 
