@@ -13,7 +13,7 @@
     methods: {
       doUpdate(event) {
         //inputの値を持ってディスパッチ
-        store.dispatch('doUpdate', event.target.value)
+        this.$store.dispatch('doUpdate', event.target.value)
       }
     }
   }
