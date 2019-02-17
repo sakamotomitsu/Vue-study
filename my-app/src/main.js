@@ -3,10 +3,10 @@
 
 import Vue from 'vue'
 import App from './App.Vue'
-import store from './store'
+import store from './store.js'
 
 
-Vue.config.productionTip = false
+//Vue.config.productionTip = false
 
 /*
 var windowPlugin = {
