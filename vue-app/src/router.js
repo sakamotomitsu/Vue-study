@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 // ルート用のコンポーネントを読み込む
 import Home from '@/views/Home.vue'
 import Product from '@/views/Product.vue'
+import ProductList from '@/views/ProductList.vue'
 
 Vue.use(VueRouter)
 
@@ -19,7 +20,11 @@ const router = new VueRouter({
     },
     {
       name: 'product',
-      path: '/product',
+      path: '/product',// IDがついてないときはリストを表示
+      component: Product
+    },
+    {
+      path: '/product/:id(\\d+)', // :id がパラメータ 何が入ってもOK (\\d+)数字のみマッチ
       component: Product
     }
   ]
