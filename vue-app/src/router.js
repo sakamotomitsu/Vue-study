@@ -25,7 +25,8 @@ const router = new VueRouter({
     },
     {
       path: '/product/:id(\\d+)', // :id がパラメータ 何が入ってもOK (\\d+)数字のみマッチ
-      component: Product
+      component: Product,
+      props: route => ({ id: Number(route.params.id) })
     }
   ]
 })
