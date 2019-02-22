@@ -21,7 +21,7 @@ const router = new VueRouter({
     {
       name: 'product',
       path: '/product',// IDがついてないときはリストを表示
-      component: Product
+      component: ProductList
     },
     {
       path: '/product/:id(\\d+)', // :id がパラメータ 何が入ってもOK (\\d+)数字のみマッチ
