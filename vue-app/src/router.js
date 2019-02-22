@@ -12,8 +12,16 @@ const router = new VueRouter({
   mode: 'history',
   // URLのパスと紐づくコンポーネントをマッピング
   routes: [
-    { path: '/', component: Home },
-    { path: '/product', component: Product }
+    {
+      name: 'home',
+      path: '/',
+      component: Home
+    },
+    {
+      name: 'product',
+      path: '/product',
+      component: Product
+    }
   ]
 })
 
