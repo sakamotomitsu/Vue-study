@@ -14,7 +14,6 @@
   import products from '@/api/product.js'
 
   export default {
-    name: "Product",
     props: { id: Number },
     data() {
       return { item: null }
@@ -22,7 +21,7 @@
     watch: {
       id: {
         handler() {
-          products.asyncFind(this.id, item => {
+          products.asyncfind(this.id, item => {
             this.item = item
           })
         }, immediate: true
