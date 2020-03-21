@@ -1,6 +1,10 @@
+import Vue from 'vue'
+import Vuex from 'vuex'
 import products from '@/api/product.js'
 
-export default {
+Vue.use(Vuex)
+
+export default new Vuex.Store({
   namespaced: true,
   state: {
     detail: {}
@@ -22,4 +26,4 @@ export default {
       commit('clear')
     }
   }
-}
+})

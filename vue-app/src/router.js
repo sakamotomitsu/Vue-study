@@ -46,7 +46,10 @@ const router = new VueRouter({
         { //商品のレビュー詳細
           name: 'product-detail',
           path: 'review/:rid', //親ルートと被らないパラメータを指定
-          component: ProductReviewDetail
+          component: ProductReviewDetail,
+          props: route => ({
+            rid: Number(route.params.rid)
+          })
         }
       ]
     }
